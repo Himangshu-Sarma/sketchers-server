@@ -14,7 +14,7 @@ console.log("isDev", isDev, " url", url);
 app.use(cors({ origin: url }));
 const httpServer = createServer(app);
 const io = new Server(httpServer, { cors: url });
-
+  
 io.on("connection", (socket) => {
   console.log("Console connected");
 
@@ -35,4 +35,4 @@ io.on("connection", (socket) => {
   }
 });
 
-httpServer.listen(5000);
+httpServer.listen(5005);
