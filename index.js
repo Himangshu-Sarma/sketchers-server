@@ -2,16 +2,13 @@ const express = require("express");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
-// const dotenv = require("dotenv");
-
-// dotenv.config({
-//   path: "./.env.local",
-// });
 
 const app = express();
 
 const isDev = app.settings.env === "development";
-const url = isDev ? "http://localhost:3000/" : "https://sketchers-client.vercel.app/";
+const url = isDev
+  ? "http://localhost:3000/"
+  : "https://sketchers-client.vercel.app/";
 console.log("isDev", isDev, " url", url);
 
 app.use(cors({ origin: url }));
